@@ -30,13 +30,13 @@ import {
   playXtreme,
   xtremeResult,
 } from './engine'
+import { AndreSplash } from './AndreSplash'
 import Multiplayer from './Multiplayer'
 import { DEFAULT_PALETTE, PALETTES, ThemeContext, buildTheme, useTheme } from './theme'
 
 const THEME_KEY = 'xtreme-velha:theme'
 const PALETTE_KEY = 'xtreme-velha:palette'
 const MODES = { system: 'Auto', light: 'Claro', dark: 'Escuro' }
-const INTRO_MS = 1400
 
 // A splash nativa fica na tela até as preferências salvas serem lidas.
 SplashScreen.preventAutoHideAsync().catch(() => {})
@@ -133,18 +133,7 @@ function XtremeGame({ onBack }) {
   )
 }
 
-// ── Abertura, menu e configurações ─────────────────────────────────────────
-
-/** Continuação animada da splash nativa; no navegador é a única splash. */
-function Intro() {
-  const t = useTheme()
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: 28, backgroundColor: t.bg }}>
-      <Logo size={148} animated />
-      <Wordmark />
-    </View>
-  )
-}
+// ── Menu e configurações ───────────────────────────────────────────────────
 
 const CLASSIC_PREVIEW = ['X', null, 'O', null, 'X', null, 'O', null, 'X']
 
@@ -232,7 +221,7 @@ export default function App() {
   const [mode, setMode] = useState('system')
   const [palette, setPalette] = useState(DEFAULT_PALETTE)
   const [loaded, setLoaded] = useState(false)
-  const [intro, setIntro] = useState(true)
+  const [splash, setSplash] = useState(true)
 
   useEffect(() => {
     AsyncStorage.multiGet([THEME_KEY, PALETTE_KEY])
@@ -245,10 +234,7 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    if (!loaded) return
-    SplashScreen.hide()
-    const timer = setTimeout(() => setIntro(false), INTRO_MS)
-    return () => clearTimeout(timer)
+    if (loaded) SplashScreen.hide()
   }, [loaded])
 
   useEffect(() => {
@@ -275,27 +261,31 @@ export default function App() {
     <SafeAreaProvider>
       <ThemeContext.Provider value={theme}>
         <SafeAreaView style={{ flex: 1, backgroundColor: theme.bg }}>
-          <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
-          {intro ? (
-            <Intro />
-          ) : (
-            <>
-              {screen === 'menu' && <Menu onSelect={setScreen} />}
-              {screen === 'classic' && <ClassicGame onBack={back} />}
-              {screen === 'xtreme' && <XtremeGame onBack={back} />}
-              {screen === 'lan' && <Multiplayer onBack={back} />}
-              {screen === 'settings' && (
-                <Settings
-                  onBack={back}
-                  mode={mode}
-                  palette={palette}
-                  onModeChange={setMode}
-                  onPaletteChange={setPalette}
-                />
-              )}
-            </>
+          <StatusBar style={splash || scheme === 'dark' ? 'light' : 'dark'} />
+          {screen === 'menu' && <Menu onSelect={setScreen} />}
+          {screen === 'classic' && <ClassicGame onBack={back} />}
+          {screen === 'xtreme' && <XtremeGame onBack={back} />}
+          {screen === 'lan' && <Multiplayer onBack={back} />}
+          {screen === 'settings' && (
+            <Settings
+              onBack={back}
+              mode={mode}
+              palette={palette}
+              onModeChange={setMode}
+              onPaletteChange={setPalette}
+            />
           )}
         </SafeAreaView>
+        {/* Continuação animada da splash nativa; no navegador é a única splash. */}
+        {splash && (
+          <AndreSplash
+            appName="X-Treme Velha"
+            appIcon={require('../assets/icon.png')}
+            appBackground={theme.bg}
+            appForeground={theme.text}
+            onFinish={() => setSplash(false)}
+          />
+        )}
       </ThemeContext.Provider>
     </SafeAreaProvider>
   )
