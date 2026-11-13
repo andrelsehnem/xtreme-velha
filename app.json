@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "X-Treme Velha",
+    "slug": "xtreme-velha",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#17100e",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "xtremevelha.andre100.dev",
+      "versionCode": 1
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "name": "X-Treme Velha",
+      "shortName": "X-Treme",
+      "lang": "pt-BR",
+      "themeColor": "#17100e",
+      "backgroundColor": "#17100e"
+    },
+    "plugins": [
+      "./plugins/android-project",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 260,
+          "backgroundColor": "#fff6ec",
+          "dark": {
+            "image": "./assets/splash-icon-dark.png",
+            "backgroundColor": "#17100e"
+          }
+        }
+      ]
+    ],
+    "description": "Jogo da velha em nove tabuleiros: cada jogada decide onde será a próxima."
+  }
+}

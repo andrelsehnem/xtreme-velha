@@ -1,0 +1,104 @@
+{
+  "neon": {
+    "label": "Neon Arcade",
+    "description": "Ciano contra rosa sobre roxo profundo. Clima de fliperama.",
+    "light": {
+      "bg": "#f3f1ff",
+      "surface": "#ffffff",
+      "surfaceAlt": "#e6e1ff",
+      "border": "#d3ccf7",
+      "text": "#17123a",
+      "textDim": "#625c8f",
+      "x": "#0b8fb0",
+      "o": "#db2777",
+      "primary": "#6d4aff",
+      "onPrimary": "#ffffff",
+      "boardBg": "#dad3fb",
+      "cellBg": "#ffffff",
+      "cellOff": "#eeebff"
+    },
+    "dark": {
+      "bg": "#0c0a1d",
+      "surface": "#17142e",
+      "surfaceAlt": "#262150",
+      "border": "#322c61",
+      "text": "#f1efff",
+      "textDim": "#9d98c7",
+      "x": "#22d3ee",
+      "o": "#ff4f9a",
+      "primary": "#7c5cff",
+      "onPrimary": "#ffffff",
+      "boardBg": "#141130",
+      "cellBg": "#342e6e",
+      "cellOff": "#1c1840"
+    }
+  },
+  "lousa": {
+    "label": "Giz e Lousa",
+    "description": "Giz colorido na lousa verde; caneta azul e vermelha no caderno.",
+    "light": {
+      "bg": "#f7f2e7",
+      "surface": "#fffdf7",
+      "surfaceAlt": "#ece3cf",
+      "border": "#ddd2bb",
+      "text": "#1f2a44",
+      "textDim": "#6b6858",
+      "x": "#1d4ed8",
+      "o": "#d62839",
+      "primary": "#1f2a44",
+      "onPrimary": "#fffdf7",
+      "boardBg": "#e4d9c1",
+      "cellBg": "#fffdf7",
+      "cellOff": "#f1eada"
+    },
+    "dark": {
+      "bg": "#12201b",
+      "surface": "#1a2d26",
+      "surfaceAlt": "#264136",
+      "border": "#335446",
+      "text": "#f2f0e6",
+      "textDim": "#9db5a9",
+      "x": "#ffd166",
+      "o": "#ff8fa3",
+      "primary": "#f2f0e6",
+      "onPrimary": "#12201b",
+      "boardBg": "#0d1814",
+      "cellBg": "#2d4c3f",
+      "cellOff": "#182a23"
+    }
+  },
+  "brasa": {
+    "label": "Brasa",
+    "description": "Laranja quente contra verde-água sobre tons de café.",
+    "light": {
+      "bg": "#fff6ec",
+      "surface": "#ffffff",
+      "surfaceAlt": "#ffe6cf",
+      "border": "#f1d2b6",
+      "text": "#2a1509",
+      "textDim": "#7d6455",
+      "x": "#c2410c",
+      "o": "#0f766e",
+      "primary": "#c2410c",
+      "onPrimary": "#ffffff",
+      "boardBg": "#f9dcc1",
+      "cellBg": "#ffffff",
+      "cellOff": "#fff0e2"
+    },
+    "dark": {
+      "bg": "#17100e",
+      "surface": "#231815",
+      "surfaceAlt": "#3a2720",
+      "border": "#4a332b",
+      "text": "#fff3ea",
+      "textDim": "#b89c8f",
+      "x": "#ff8a3d",
+      "o": "#2dd4bf",
+      "primary": "#ff8a3d",
+      "onPrimary": "#1b0f08",
+      "boardBg": "#0f0a08",
+      "cellBg": "#422c25",
+      "cellOff": "#1f1512"
+    }
+  }
+}

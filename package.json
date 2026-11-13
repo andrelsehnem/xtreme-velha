@@ -1,39 +1,37 @@
 {
   "name": "xtreme-velha",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "dev:mobile": "vite --host 0.0.0.0 --port 5173",
-    "build": "tsc -b && vite build",
-    "build:mobile": "npm run build && npx cap sync android",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "cap:sync": "npx cap sync",
-    "cap:sync:android": "npx cap sync android",
-    "cap:open:android": "npx cap open android",
-    "cap:run:android": "npx cap run android"
-  },
+  "version": "1.0.0",
+  "main": "index.js",
   "dependencies": {
-    "@capacitor/android": "^8.3.1",
-    "@capacitor/core": "^8.3.1",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "expo": "~58.0.25",
+    "expo-dev-client": "~58.0.20",
+    "expo-network": "~58.0.5",
+    "expo-splash-screen": "~58.0.14",
+    "expo-status-bar": "~58.0.5",
+    "expo-system-ui": "~58.0.7",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-native": "0.88.1",
+    "react-native-safe-area-context": "~5.11.1",
+    "react-native-tcp-socket": "^6.4.3",
+    "react-native-web": "^0.21.4"
   },
+  "scripts": {
+    "dev": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
+    "lint": "expo lint",
+    "build": "expo export --platform web",
+    "android:version:bump": "node scripts/update-android-version.js",
+    "build:android:store": "cd android && gradlew.bat bundleRelease",
+    "playStore": "call \"Build Android.bat\"",
+    "assets": "node scripts/generate-assets.js"
+  },
+  "private": true,
   "devDependencies": {
-    "@capacitor/cli": "^8.3.1",
-    "@eslint/js": "^10.0.1",
-    "@types/node": "^24.12.2",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "eslint": "^10.2.1",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.5.0",
-    "typescript": "~6.0.2",
-    "typescript-eslint": "^8.58.2",
-    "vite": "^8.0.10"
+    "eslint": "^9.39.5",
+    "eslint-config-expo": "~58.0.4"
   }
 }
