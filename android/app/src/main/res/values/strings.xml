@@ -1,7 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Extreme Velha</string>
-    <string name="title_activity_main">Extreme Velha</string>
-    <string name="package_name">com.extremevelha.app</string>
-    <string name="custom_url_scheme">com.extremevelha.app</string>
+  <string name="app_name">X-Treme Velha</string>
+  <string name="expo_system_ui_user_interface_style" translatable="false">automatic</string>
 </resources>
